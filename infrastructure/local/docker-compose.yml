@@ -7,8 +7,8 @@ services:
       - "5432:5432"
   api:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../../.
+      dockerfile: infrastructure/local/Dockerfile
     ports:
       - "${PORT}:${PORT}"
     env_file:

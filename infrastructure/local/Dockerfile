@@ -11,10 +11,10 @@ FROM alpine:3.18
 WORKDIR /app
 COPY --from=builder /app/main /app/   
 COPY --from=builder /app/migrate ./migrate
-COPY dev.env /app/
-COPY start.sh /app/
-COPY wait-for.sh /app/ 
-COPY db/migration ./migration
+COPY ./infrastructure/local/dev.env /app/
+COPY ./infrastructure/local/start.sh /app/
+COPY ./infrastructure/local/wait-for.sh /app/ 
+COPY ./db/migration ./migration
 
 EXPOSE 8080
 
