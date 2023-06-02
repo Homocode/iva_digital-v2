@@ -2,19 +2,19 @@ services:
   postgres:
     image: postgres:12-alpine3.18
     env_file:
-      - dev.env
+      - .env
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
     volumes:
       - postgres:/var/lib/postgresql/data
   api:
     build:
-      context: ../../.
+      context: ../../../ .
       dockerfile: infrastructure/local/Dockerfile
     ports:
-      - "${PORT}:${PORT}"
+      - "${SERVER_PORT}:${SERVER_PORT}"
     env_file:
-      - dev.env
+      - .env
     depends_on:
       - postgres
     entrypoint: ["/app/wait-for.sh", "postgres:5432", "--", "/app/start.sh"]
