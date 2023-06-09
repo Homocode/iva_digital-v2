@@ -11,9 +11,9 @@ FROM alpine:3.18
 WORKDIR /app
 COPY --from=builder /app/main /app/   
 COPY --from=builder /app/migrate ./migrate
-COPY ./infrastructure/local/.env /app/
-COPY ./infrastructure/local/start.sh /app/
-COPY ./infrastructure/local/wait-for.sh /app/ 
+COPY ./build/package/local/.env /app/
+COPY ./build/package/local/start.sh /app/
+COPY ./build/package/local/wait-for.sh /app/ 
 COPY ./db/migration ./migration
 
 EXPOSE 8080

@@ -1,4 +1,4 @@
-package initializers
+package envconfig
 
 import (
 	"github.com/spf13/viper"
@@ -13,7 +13,7 @@ type Config struct {
 	ServerPort     string `mapstructure:"SERVER_PORT"`
 }
 
-func LoadConfig(path string) (config Config, err error) {
+func LoadConfig(path string) (config *Config, err error) {
 	viper.AddConfigPath(path)
 	viper.SetConfigFile(".env")
 

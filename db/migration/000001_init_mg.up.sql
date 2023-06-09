@@ -1,11 +1,11 @@
 CREATE TABLE "clientes" (
   "id" bigserial PRIMARY KEY,
-  "cuit" varchar(11) UNIQUE NOT NULL,
+  "cuit" varchar(13) UNIQUE NOT NULL,
   "razon_social" varchar NOT NULL
 );
 
 CREATE TABLE "proveedores" (
-  "cuit" varchar(11) PRIMARY KEY,
+  "cuit" varchar(13) PRIMARY KEY,
   "denominacion" varchar(64) NOT NULL,
   "tipo_de_compra" varchar,
   "jurisdiccion_provincial" varchar,
