@@ -1,20 +1,14 @@
 package usecases
 
 import (
-	"context"
-
-	contractV1 "github.com/Homocode/liquidacion-iva-service/api/http/v1/models"
+	"github.com/Homocode/liquidacion-iva-service/internal/clientes/domain"
 )
 
 type ClientesUsecases struct {
-	clientesService ClientesService
+	clientesService domain.ClientesService
 }
 
-type ClientesService interface {
-	Create(ctx context.Context, cliente *contractV1.CreateClienteRequest) error
-}
-
-func NewClientesUsecases(clientesService ClientesService) *ClientesUsecases {
+func NewClientesUsecases(clientesService domain.ClientesService) *ClientesUsecases {
 	return &ClientesUsecases{
 		clientesService: clientesService,
 	}

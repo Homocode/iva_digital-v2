@@ -48,7 +48,7 @@ func NewRouter(clientesHandler *controller.ClienteHandler) *mux.Router {
 		w.Write([]byte("Hello World!"))
 	})
 	r.HandleFunc("/clientes", Adapt(
-		http.HandlerFunc(clientesHandler.Create),
+		http.HandlerFunc(clientesHandler.Crear),
 		controller.MiddlewareValidateCliente).
 		ServeHTTP)
 	return r

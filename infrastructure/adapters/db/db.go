@@ -3,8 +3,8 @@ package db
 import (
 	"fmt"
 
-	envconfig "github.com/Homocode/liquidacion-iva-service/pkg/initializers/config"
-	"github.com/Homocode/liquidacion-iva-service/pkg/initializers/logger"
+	envconfig "github.com/Homocode/liquidacion-iva-service/internal/app/config"
+	"github.com/Homocode/liquidacion-iva-service/internal/app/logger"
 	"gorm.io/driver/postgres"
 	"gorm.io/gen"
 	"gorm.io/gorm"

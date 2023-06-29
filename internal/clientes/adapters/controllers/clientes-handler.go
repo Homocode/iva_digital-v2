@@ -1,22 +1,14 @@
-package controller
+package controllers
 
-import (
-	"context"
-
-	contractV1 "github.com/Homocode/liquidacion-iva-service/api/http/v1/models"
-)
+import "github.com/Homocode/liquidacion-iva-service/internal/clientes/domain"
 
 type ClienteHandler struct {
-	clientesUseCases ClientesUsecases
-}
-
-type ClientesUsecases interface {
-	Create(ctx context.Context, cliente *contractV1.CreateClienteRequest) error
+	clientesUseCases domain.ClientesUsecases
 }
 
 type keyCliente struct{}
 
-func NewClienteHandler(clientesUsecases ClientesUsecases) *ClienteHandler {
+func NewClienteHandler(clientesUsecases domain.ClientesUsecases) *ClienteHandler {
 	return &ClienteHandler{
 		clientesUseCases: clientesUsecases,
 	}

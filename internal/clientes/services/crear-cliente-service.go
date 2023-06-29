@@ -3,9 +3,9 @@ package services
 import (
 	"context"
 
-	contractV1 "github.com/Homocode/liquidacion-iva-service/api/http/v1/models"
+	"github.com/Homocode/liquidacion-iva-service/internal/clientes/domain"
 )
 
-func (c *ClientesServices) Create(ctx context.Context, cliente *contractV1.CreateClienteRequest) error {
-	return c.clientestRepo.Create(ctx, cliente)
+func (c *ClientesServices) Crear(ctx context.Context, nuevoCliente *domain.Cliente) error {
+	return c.clientestRepo.Create(ctx, nuevoCliente)
 }

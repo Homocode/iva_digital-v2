@@ -5,13 +5,13 @@ import (
 
 	"github.com/Homocode/liquidacion-iva-service/infrastructure/adapters/db"
 	server "github.com/Homocode/liquidacion-iva-service/infrastructure/adapters/http-server"
+	envconfig "github.com/Homocode/liquidacion-iva-service/internal/app/config"
+	"github.com/Homocode/liquidacion-iva-service/internal/app/logger"
+	"github.com/Homocode/liquidacion-iva-service/internal/app/validation"
 	controller "github.com/Homocode/liquidacion-iva-service/internal/clientes/adapters/controllers"
 	"github.com/Homocode/liquidacion-iva-service/internal/clientes/adapters/repository"
 	"github.com/Homocode/liquidacion-iva-service/internal/clientes/services"
 	usecases "github.com/Homocode/liquidacion-iva-service/internal/clientes/usecases"
-	envconfig "github.com/Homocode/liquidacion-iva-service/pkg/initializers/config"
-	"github.com/Homocode/liquidacion-iva-service/pkg/initializers/logger"
-	"github.com/Homocode/liquidacion-iva-service/pkg/initializers/validation"
 )
 
 var config *envconfig.Config

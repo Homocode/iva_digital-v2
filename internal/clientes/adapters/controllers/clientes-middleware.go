@@ -1,17 +1,24 @@
-package controller
+package controllers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 	"regexp"
 
 	contractV1 "github.com/Homocode/liquidacion-iva-service/api/http/v1/models"
-	"github.com/Homocode/liquidacion-iva-service/pkg/initializers/validation"
+	"github.com/Homocode/liquidacion-iva-service/internal/app/validation"
 	"github.com/Homocode/liquidacion-iva-service/pkg/utils"
 	"github.com/go-playground/validator/v10"
 )
+
+func FromJson(r io.ReadCloser, target interface{}) error {
+	d := json.NewDecoder(r)
+	e := d.Decode(target)
+	return e
+}
 
 func MiddlewareValidateCliente(next http.Handler) http.Handler {
 	v := validation.Val
